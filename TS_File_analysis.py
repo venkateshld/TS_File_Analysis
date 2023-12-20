@@ -455,7 +455,7 @@ if __name__ == '__main__':
             break
 
 
-    # total_sec = time_dif() # Check time difference between two TS files.
+    total_sec = time_dif() # Check time difference between two TS files.
     # total_sec = cProfile.run('time_dif()')
     # traffic_rate_per_port(total_sec)
     # cProfile.run('traffic_rate_per_port(total_sec)')
