@@ -1,12 +1,6 @@
 import re
-import sys
 from datetime import datetime, timedelta
-from datetime import date
 import time
-# from memory_profiler import profile
-import tracemalloc
-from line_profiler import LineProfiler
-import cProfile
 import ts
 
 
@@ -434,26 +428,17 @@ if __name__ == '__main__':
     current_time = time.ctime()
     print("Today's date and time is",current_time)
 
-    # TS_Path_1 = 'Database/ESA_TS_File_1.txt'
-    # TS_Path_2 = 'Database/ESA_TS_File_2.txt'
-    TS_Path_1 = 'Database/SR_TS_File_1.txt'
-    TS_Path_2 = 'Database/SR_TS_File_2.txt'
-    # TS_Path_1 = 'Database/Satellite_TS_File_1.txt'
-    # TS_Path_2 = 'Database/Satellite_TS_File_2.txt'
-    # TS_Path_1 = 'Database/Port_info.txt'
+    # TS_Path_1 = 'ESA_TS_File_1.txt'
+    # TS_Path_2 = 'ESA_TS_File_2.txt'
+    # TS_Path_1 = 'Satellite_TS_File_1.txt'
+    # TS_Path_2 = 'Satellite_TS_File_2.txt'
+    TS_Path_1 = 'SR_TS_File_1.txt'
+    TS_Path_2 = 'SR_TS_File_2.txt'
 
     TS_1 = ts.TsFile(TS_Path_1)
     TS_2 = ts.TsFile(TS_Path_2)
 
     port = port()
-
-    while True:
-        input1 = input('\nEnter port number: ')
-        if input1:
-            port.port_helth_check(input1)
-        else:
-            break
-
 
     total_sec = time_dif() # Check time difference between two TS files.
     # total_sec = cProfile.run('time_dif()')
@@ -464,4 +449,11 @@ if __name__ == '__main__':
     # profile = LineProfiler(traffic_rate_per_port(total_sec))
     # profile.print_stats()
 
+
+    while True:
+        input1 = input('\nEnter port number: ')
+        if input1:
+            port.port_helth_check(input1)
+        else:
+            break
 
