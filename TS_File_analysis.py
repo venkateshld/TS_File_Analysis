@@ -1,8 +1,6 @@
 import re
-import os
 from datetime import datetime, timedelta
 import time
-from line_profiler import LineProfiler
 import ts
 
 
@@ -442,14 +440,6 @@ if __name__ == '__main__':
 
     port = port()
 
-    while True:
-        input1 = input('\nEnter port number: ')
-        if input1:
-            port.port_helth_check(input1)
-        else:
-            break
-
-
     total_sec = time_dif() # Check time difference between two TS files.
     # total_sec = cProfile.run('time_dif()')
     # traffic_rate_per_port(total_sec)
@@ -459,4 +449,11 @@ if __name__ == '__main__':
     # profile = LineProfiler(traffic_rate_per_port(total_sec))
     # profile.print_stats()
 
+
+    while True:
+        input1 = input('\nEnter port number: ')
+        if input1:
+            port.port_helth_check(input1)
+        else:
+            break
 
